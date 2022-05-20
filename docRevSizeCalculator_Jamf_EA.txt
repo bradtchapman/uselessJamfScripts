@@ -1,0 +1,36 @@
+# EXTENSION ATTRIBUTE: "DRV100 Size"
+# Size of the .DocumentRevisions-V100 folder in megabytes.
+# Expected values: 0 - 999999?
+# Example: Disk: 250GB; DRV100: 50GB; Free: 25GB. EA: 50000
+=============================================================
+#!/bin/bash
+reverseEApath="/var/tmp/docRevCalculations.plist"
+docRevSize=$(defaults read "$reverseEApath" docRevSize) 
+echo "<result>$docRevSize</result>"
+=============================================================
+
+
+
+# EXTENSION ATTRIBUTE: "DRV100 % of Free"
+# Percentage of DRV100's size relative to the disk free space
+# Expected values: 0 - 1000+
+# Example: Disk: 250GB; DRV100: 50GB; Free: 25GB. EA: 200
+=============================================================
+#!/bin/bash
+reverseEApath="/var/tmp/docRevCalculations.plist"
+docRevSize=$(defaults read "$reverseEApath" DRSPercentOfFreeSpace)
+echo "<result>$DRSPercentOfFreeSpace</result>"
+=============================================================
+
+
+
+# EXTENSION ATTRIBUTE: "DRV100 % of Disk"
+# Percentage of DRV100's size relative to the whole disk
+# Expected values: 0-100
+# Example: Disk: 250GB; DRV100: 50GB; Free: 25GB. EA: 20
+=============================================================
+#!/bin/bash
+reverseEApath="/var/tmp/docRevCalculations.plist"
+docRevSize=$(defaults read "$reverseEApath" DRSPercentOfDiskSize)
+echo "<result>$DRSPercentOfDiskSize</result>"
+=============================================================
