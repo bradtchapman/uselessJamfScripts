@@ -9,8 +9,8 @@ if [[ $osVersion -ge 17 ]]
 then
 	echo "Stopping Time Machine and deleting snapshots..."
     
-    /usr/bin/tmutil stopbackup > 2>&1
-    sleep 2
+	/usr/bin/tmutil stopbackup > 2>&1
+	sleep 2
 	/usr/bin/tmutil deletelocalsnapshots / 2>&1
 fi
 
