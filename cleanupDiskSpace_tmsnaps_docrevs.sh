@@ -53,6 +53,12 @@ echo "The computer MUST be restarted now."
 
 /bin/launchctl reboot apps
 
-sleep 5
+sleep 2
 
-/bin/launchctl reboot system
+"$jh" -windowType utility -title "Self Service Disk Cleanup" \
+-heading "SYSTEM REBOOTING NOW." \
+-description "This Mac will reboot in 15 seconds." \
+-icon "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertNoteIcon.icns" -iconSize 128 \
+-timeout 15 &
+
+/sbin/shutdown -r +16 &
