@@ -5,7 +5,7 @@ jh="/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelp
 
 # Time Machine snapshots are available on macOS 10.13.6 and higher; however,
 # on macOS 10.14.6 and below, the 'deletelocalsnapshots' verb requires specifying
-# each snapshot.  Therefore, the below will not work.
+# each snapshot.  Therefore, the below will not work on those older OS'es.
 
 if [[ $osVersion -ge 19 ]]
 then
