@@ -16,8 +16,8 @@ cleanupChoice=$?
 
 case $cleanupChoice in
 	0) echo "User agreed to clean up." ;;
-    2) echo "User cancelled.  Aborting..."; exit 0 ;;
-    *) echo "Something else went wrong.  Aborting..."; exit 0 ;;
+    2) echo "User cancelled.  Aborting..."; exit 1 ;;
+    *) echo "Something else went wrong.  Aborting..."; exit 1 ;;
 esac
 
 if [[ $osVersion -ge 19 ]]
