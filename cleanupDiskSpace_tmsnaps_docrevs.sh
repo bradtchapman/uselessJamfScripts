@@ -3,9 +3,11 @@
 osVersion=$(sw_vers -BuildVersion | cut -c 1,2)
 jh="/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper"
 
-# Time Machine snapshots are available on macOS 10.13.6 and higher.
+# Time Machine snapshots are available on macOS 10.13.6 and higher; however,
+# on macOS 10.14.6 and below, the 'deletelocalsnapshots' verb requires specifying
+# each snapshot.  Therefore, the below will not work.
 
-if [[ $osVersion -ge 17 ]]
+if [[ $osVersion -ge 19 ]]
 then
 	echo "Stopping Time Machine and deleting snapshots..."
     
